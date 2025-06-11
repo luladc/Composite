@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"C:\\Descargas\\Unreal Projects\\Composite\\Source\\Composite\\Composite.Build.cs",
+		"C:\\Descargas\\Unreal Projects\\Composite\\Source\\Composite.Target.cs",
+		"C:\\Descargas\\Unreal Projects\\Composite\\Source\\CompositeEditor.Target.cs"
+	],
+	"EngineVersion": "5.5.4"
+}

@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "Composite",
+			"Path": "..\\Source\\Composite.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "CompositeEditor",
+			"Path": "..\\Source\\CompositeEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

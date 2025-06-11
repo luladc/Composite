@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\Composite.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Composite.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\CompositeEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.vsconfig" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\Composite">
+      <UniqueIdentifier>{71067C1C-9E80-3593-8604-5AD7B7E11F1E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Composite\Composite.Build.cs">
+      <Filter>Source\Composite</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\Composite\Composite.cpp">
+      <Filter>Source\Composite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Composite\Composite.h">
+      <Filter>Source\Composite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Composite\CompositeCharacter.cpp">
+      <Filter>Source\Composite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Composite\CompositeCharacter.h">
+      <Filter>Source\Composite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Composite\CompositeGameMode.cpp">
+      <Filter>Source\Composite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Composite\CompositeGameMode.h">
+      <Filter>Source\Composite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Composite\Enemigo.cpp">
+      <Filter>Source\Composite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Composite\Enemigo.h">
+      <Filter>Source\Composite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Composite\GrupoEnemigos.cpp">
+      <Filter>Source\Composite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Composite\GrupoEnemigos.h">
+      <Filter>Source\Composite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Composite\IEnemigo.cpp">
+      <Filter>Source\Composite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Composite\IEnemigo.h">
+      <Filter>Source\Composite</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
