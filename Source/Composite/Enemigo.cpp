@@ -92,6 +92,8 @@ void AEnemigo::BeginPlay()
 
     PuntosPatrulla.Add(GetActorLocation());
     PuntosPatrulla.Add(GetActorLocation() + FVector(500, 0, 0));
+	Perseguir(nullptr); // Iniciar sin perseguir a nadie
+	Patrullar(); // Iniciar patrullando
 }
 
 // Called every frame
