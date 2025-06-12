@@ -13,8 +13,9 @@ void EmptyLinkFunctionForGeneratedCodeEnemigo() {}
 COMPOSITE_API UClass* Z_Construct_UClass_AEnemigo();
 COMPOSITE_API UClass* Z_Construct_UClass_AEnemigo_NoRegister();
 COMPOSITE_API UClass* Z_Construct_UClass_UIEnemigo_NoRegister();
-COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
-ENGINE_API UClass* Z_Construct_UClass_ACharacter();
+ENGINE_API UClass* Z_Construct_UClass_AActor();
+ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
+ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 UPackage* Z_Construct_UPackage__Script_Composite();
 // End Cross Module References
 
@@ -31,28 +32,28 @@ struct Z_Construct_UClass_AEnemigo_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
-		{ "HideCategories", "Navigation" },
 		{ "IncludePath", "Enemigo.h" },
 		{ "ModuleRelativePath", "Enemigo.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_RangoDeteccion_MetaData[] = {
-		{ "Category", "IA" },
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MeshComponent_MetaData[] = {
+		{ "Category", "Components" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// Componentes\n" },
+#endif
+		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Enemigo.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Componentes" },
+#endif
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PuntosPatrulla_MetaData[] = {
-		{ "Category", "IA" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// Distancia a la que detecta al jugador\n" },
-#endif
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_RootComp_MetaData[] = {
+		{ "Category", "Components" },
+		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Enemigo.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Distancia a la que detecta al jugador" },
-#endif
 	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FFloatPropertyParams NewProp_RangoDeteccion;
-	static const UECodeGen_Private::FStructPropertyParams NewProp_PuntosPatrulla_Inner;
-	static const UECodeGen_Private::FArrayPropertyParams NewProp_PuntosPatrulla;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_MeshComponent;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_RootComp;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static const UECodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
@@ -61,17 +62,15 @@ struct Z_Construct_UClass_AEnemigo_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_RangoDeteccion = { "RangoDeteccion", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEnemigo, RangoDeteccion), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RangoDeteccion_MetaData), NewProp_RangoDeteccion_MetaData) };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_PuntosPatrulla_Inner = { "PuntosPatrulla", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_PuntosPatrulla = { "PuntosPatrulla", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEnemigo, PuntosPatrulla), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PuntosPatrulla_MetaData), NewProp_PuntosPatrulla_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_MeshComponent = { "MeshComponent", nullptr, (EPropertyFlags)0x00200800000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEnemigo, MeshComponent), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MeshComponent_MetaData), NewProp_MeshComponent_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_RootComp = { "RootComp", nullptr, (EPropertyFlags)0x00200800000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEnemigo, RootComp), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RootComp_MetaData), NewProp_RootComp_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AEnemigo_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_RangoDeteccion,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_PuntosPatrulla_Inner,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_PuntosPatrulla,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_MeshComponent,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_RootComp,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_AEnemigo_Statics::DependentSingletons[])() = {
-	(UObject* (*)())Z_Construct_UClass_ACharacter,
+	(UObject* (*)())Z_Construct_UClass_AActor,
 	(UObject* (*)())Z_Construct_UPackage__Script_Composite,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::DependentSingletons) < 16);
@@ -80,7 +79,7 @@ const UECodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_AEnemigo
 };
 const UECodeGen_Private::FClassParams Z_Construct_UClass_AEnemigo_Statics::ClassParams = {
 	&AEnemigo::StaticClass,
-	"Game",
+	"Engine",
 	&StaticCppClassTypeInfo,
 	DependentSingletons,
 	nullptr,
@@ -113,10 +112,10 @@ AEnemigo::~AEnemigo() {}
 struct Z_CompiledInDeferFile_FID_Descargas_Unreal_Projects_Composite_Source_Composite_Enemigo_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AEnemigo, AEnemigo::StaticClass, TEXT("AEnemigo"), &Z_Registration_Info_UClass_AEnemigo, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemigo), 2555149858U) },
+		{ Z_Construct_UClass_AEnemigo, AEnemigo::StaticClass, TEXT("AEnemigo"), &Z_Registration_Info_UClass_AEnemigo, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemigo), 956752342U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Descargas_Unreal_Projects_Composite_Source_Composite_Enemigo_h_3409343720(TEXT("/Script/Composite"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Descargas_Unreal_Projects_Composite_Source_Composite_Enemigo_h_674433119(TEXT("/Script/Composite"),
 	Z_CompiledInDeferFile_FID_Descargas_Unreal_Projects_Composite_Source_Composite_Enemigo_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Descargas_Unreal_Projects_Composite_Source_Composite_Enemigo_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

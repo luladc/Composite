@@ -14,6 +14,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define COMPOSITE_GrupoEnemigos_generated_h
 
+#define FID_Descargas_Unreal_Projects_Composite_Source_Composite_GrupoEnemigos_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execStartPatrol);
+
+
 #define FID_Descargas_Unreal_Projects_Composite_Source_Composite_GrupoEnemigos_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAGrupoEnemigos(); \
@@ -40,6 +44,7 @@ public: \
 #define FID_Descargas_Unreal_Projects_Composite_Source_Composite_GrupoEnemigos_h_12_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
+	FID_Descargas_Unreal_Projects_Composite_Source_Composite_GrupoEnemigos_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
 	FID_Descargas_Unreal_Projects_Composite_Source_Composite_GrupoEnemigos_h_12_INCLASS_NO_PURE_DECLS \
 	FID_Descargas_Unreal_Projects_Composite_Source_Composite_GrupoEnemigos_h_12_ENHANCED_CONSTRUCTORS \
 private: \

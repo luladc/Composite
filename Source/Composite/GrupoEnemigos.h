@@ -1,6 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
+#include "Enemigo1.h"
 #include "IEnemigo.h"	
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
@@ -13,21 +13,28 @@ class COMPOSITE_API AGrupoEnemigos : public AActor, public IIEnemigo
 	
 public:	
 	// Sets default values for this actor's properties
-	AGrupoEnemigos();
+	AGrupoEnemigos ();
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+public:
+	UPROPERTY(EditAnywhere, Category = "Grupo Enemigos")
+	TArray<AEnemigo1*> Enemigos;
+
+	// Ordena a todos los enemigos que persigan al objetivo dado
+	UFUNCTION()
+	void StartPatrol() override;
 
 public:
-	void AgregarEnemigo(AActor* Enemigo);
-	virtual void Perseguir(AActor* Objetivo) override;
+	UPROPERTY(EditAnywhere, Category = "Grupo")
+	TSubclassOf<class AEnemigo1> ClaseEnemigo1;
 
-private:
-	UPROPERTY()
-	TArray<AActor*> Enemigos;
+	UPROPERTY(EditAnywhere, Category = "Grupo")
+	int32 CantidadEnemigos = 5;
+
+	UPROPERTY(EditAnywhere, Category = "Grupo")
+	float Separacion = 150.0f; // distancia entre enemigos
+
 };

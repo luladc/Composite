@@ -3,34 +3,43 @@
 
 #include "GrupoEnemigos.h"
 #include "IEnemigo.h"
+#include "Kismet/GameplayStatics.h"
 
-AGrupoEnemigos::AGrupoEnemigos()
+AGrupoEnemigos::AGrupoEnemigos ()
 {
+    PrimaryActorTick.bCanEverTick = false;
 }
 
 void AGrupoEnemigos::BeginPlay()
 {
-}
+    Super::BeginPlay();
+    
+    if (!ClaseEnemigo1) return;
 
-void AGrupoEnemigos::Tick(float DeltaTime)
-{
-}
+    FVector PosicionBase = GetActorLocation();
 
-void AGrupoEnemigos::AgregarEnemigo(AActor* Enemigo)
-{
-    if (Enemigo && Enemigo->GetClass()->ImplementsInterface(UIEnemigo::StaticClass()))
+    for (int32 i = 0; i < CantidadEnemigos; ++i)
     {
-        Enemigos.Add(Enemigo);
-    }
-}
+        FVector PosicionSpawn = PosicionBase + FVector(i * Separacion, 0.0f, 0.0f);
+        FRotator Rotacion = FRotator::ZeroRotator;
 
-void AGrupoEnemigos::Perseguir(AActor* Objetivo)
-{
-    for (AActor* Enemigo : Enemigos)
-    {
-        if (IIEnemigo* IE = Cast<IIEnemigo>(Enemigo))
+        AEnemigo1* Enemigo = GetWorld()->SpawnActor<AEnemigo1>(ClaseEnemigo1, PosicionSpawn, Rotacion);
+        if (Enemigo)
         {
-            IE->Perseguir(Objetivo);
+            Enemigos.Add(Enemigo);
+        }
+    }
+
+}
+
+void AGrupoEnemigos::StartPatrol()
+{
+    for (AEnemigo1* Enemigo : Enemigos)
+    {
+        if (Enemigo)
+        {
+            Enemigo->StartPatrol();
         }
     }
 }
+
